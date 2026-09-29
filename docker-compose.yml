@@ -1,0 +1,28 @@
+services:
+  web:
+    build: .
+    image: scenic-route-s4k3m1
+    container_name: scenic-route
+    ports:
+      - "8080:8080"          # dashboard público -> http://localhost:8080/
+    environment:
+      - FLAG=flag{sc3n1c_r0ut3_thr0ugh_th3_0p3n_r3d1r3ct}
+      - PUBLIC_HOST=sub4k3m1.status.monitor
+      - PUBLIC_PORT=8080
+      - CONTROL_PORT=9101
+      - PROBE_INTERVAL=15
+    extra_hosts:
+      # El "dominio público" resuelve, DENTRO del contenedor, a su propia IP de red
+      # (no a loopback). Así `sub4k3m1.status.monitor:9101` da refused y al control
+      # plane solo se llega vía el open redirect a 127.0.0.1:9101.
+      - "sub4k3m1.status.monitor:172.28.0.10"
+    networks:
+      lab:
+        ipv4_address: 172.28.0.10
+
+networks:
+  lab:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.28.0.0/24

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>5ub4k3m1's inc. - Monitoreo de disponibilidad</title>
+<link rel="stylesheet" href="/static/style.css">
+</head><body>
+<header>
+  <span class="logo">5ub4k3m1<span class="dot">'s inc.</span></span>
+  <span class="tag">disponibilidad &amp; páginas de estado &middot; bog1 / scl2 / gru1</span>
+</header>
+<main>
+<h1>Tus monitores</h1>
+<p class="lede">Registra cualquier endpoint público. Nuestros probes lo consultan
+cada minuto y guardan el código de respuesta más los primeros 512 bytes del cuerpo
+para tu página de estado.</p>
+<form method="post" action="/monitors">
+  <input name="url" type="text" placeholder="https://api.ejemplo.com/health" required>
+  <button type="submit">Añadir monitor</button>
+</form>
+
+<!--MONITORS-->
+
+</main>
+<footer>
+  <a href="/go?next=https://5ub4k3m1.example/blog/cinco-nueves">Blog</a>
+  <a href="/go?next=https://5ub4k3m1.example/precios">Precios</a>
+  <a href="/go?next=https://5ub4k3m1.example/estado">Estado del servicio</a>
+  <span class="small">Los enlaces salientes se contabilizan mediante nuestro servicio de atribución.</span>
+</footer>
+<script src="/static/app.js"></script>
+</body></html>

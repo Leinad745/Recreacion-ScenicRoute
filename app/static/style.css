@@ -1,0 +1,120 @@
+/* 5ub4k3m1's inc. - corporativo, gris y morado, geométrico (esquinas rectas) */
+:root {
+  --bg:      #26262d;   /* gris oscuro (más claro que negro) */
+  --panel:   #2d2d35;
+  --panel-2: #33333c;
+  --line:    #43434f;
+  --line-2:  #53535f;
+  --text:    #e6e4ee;
+  --muted:   #a6a2b6;
+  --purple:  #b47cf8;
+  --purple-2:#8b5cf6;
+  --purple-3:#7c3aed;
+  --green:   #46d39a;
+  --amber:   #f5be3f;
+  --red:     #f57676;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font: 15px/1.55 ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  margin: 0;
+  min-height: 100vh;
+}
+code, pre, .mon code, .code { font-family: ui-monospace, "SFMono-Regular", "JetBrains Mono", Menlo, Consolas, monospace; }
+
+/* Header */
+header {
+  display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
+  padding: 1rem 2rem;
+  background: var(--panel);
+  border-bottom: 2px solid var(--purple-2);
+}
+.logo {
+  font-weight: 800; font-size: 1.1rem; letter-spacing: .3px;
+  color: #fff; text-transform: none;
+}
+.logo .dot { color: var(--purple); font-weight: 700; }
+.tag {
+  color: var(--muted); font-size: .78rem; letter-spacing: .3px;
+  margin-left: auto;
+}
+
+/* Layout */
+main { max-width: 62rem; margin: 0 auto; padding: 2rem 1.5rem 3rem; }
+h1 {
+  font-size: 1.35rem; margin: 0 0 .5rem; font-weight: 700;
+  color: #fff; letter-spacing: .2px;
+  padding-left: .6rem; border-left: 4px solid var(--purple-2);
+}
+.lede { color: var(--muted); max-width: 48rem; margin: 0 0 1.5rem; }
+
+/* Form */
+form { display: flex; gap: 0; margin: 1.25rem 0 1.75rem; flex-wrap: wrap; }
+input[type=text] {
+  flex: 1 1 24rem; min-width: 0;
+  background: var(--panel); color: var(--text);
+  border: 1px solid var(--line); border-radius: 0;
+  padding: .65rem .8rem; font: inherit;
+}
+input[type=text]::placeholder { color: #6d6980; }
+input[type=text]:focus {
+  outline: none; border-color: var(--purple-2);
+  box-shadow: inset 0 0 0 1px var(--purple-2);
+}
+button {
+  background: var(--purple-2); color: #fff;
+  border: 1px solid var(--purple-2); border-radius: 0; border-left: 0;
+  padding: .65rem 1.3rem; font: inherit; font-weight: 600; cursor: pointer;
+  letter-spacing: .2px;
+}
+button:hover { background: var(--purple-3); border-color: var(--purple-3); }
+
+/* Monitor cards */
+.mon {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--purple-2);
+  border-radius: 0;
+  padding: .75rem .9rem; margin: 0 0 .6rem;
+}
+.mon .head {
+  display: flex; align-items: center; gap: .75rem;
+  justify-content: space-between;
+}
+.mon code { color: #cbbdf3; font-size: .81rem; word-break: break-all; background: transparent; }
+.code {
+  flex: none; font-weight: 700; font-size: .74rem;
+  padding: .16rem .5rem; border-radius: 0;
+  border: 1px solid var(--line-2); text-transform: uppercase; letter-spacing: .4px;
+}
+.code.ok      { color: var(--green); border-color: var(--green); }
+.code.warn    { color: var(--amber); border-color: var(--amber); }
+.code.down    { color: var(--red);   border-color: var(--red); }
+.code.pending { color: var(--muted); border-color: var(--line-2); }
+.mon pre {
+  margin: .55rem 0 .3rem;
+  background: var(--panel-2); border: 1px solid var(--line); border-radius: 0;
+  padding: .55rem .65rem; overflow: auto; max-height: 12rem;
+  color: #c1bbd6; font-size: .8rem; white-space: pre-wrap; word-break: break-word;
+}
+.mon pre:empty { display: none; }
+.small { color: var(--muted); font-size: .73rem; letter-spacing: .2px; }
+
+/* Footer */
+footer {
+  max-width: 62rem; margin: 0 auto; padding: 1.25rem 1.5rem 2.5rem;
+  border-top: 1px solid var(--line);
+  display: flex; gap: 1.5rem; flex-wrap: wrap; align-items: center;
+}
+footer a { color: var(--purple); text-decoration: none; font-size: .83rem; }
+footer a:hover { color: #fff; text-decoration: underline; }
+footer .small { flex: 1 1 auto; text-align: right; }
+
+@media (max-width: 640px) {
+  header, main, footer { padding-left: 1rem; padding-right: 1rem; }
+  .tag { margin-left: 0; width: 100%; }
+  footer .small { text-align: left; }
+}
