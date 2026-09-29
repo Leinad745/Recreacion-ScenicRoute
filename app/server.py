@@ -29,7 +29,7 @@ from fastapi.staticfiles import StaticFiles
 # --------------------------------------------------------------------------- #
 # Config
 # --------------------------------------------------------------------------- #
-FLAG = os.environ.get("FLAG", "flag{sc3n1c_r0ut3_thr0ugh_th3_0p3n_r3d1r3ct}")
+FLAG = os.environ.get("FLAG", "flag{sub4k3m1_kn0w5_d4_r0ut3}")
 PUBLIC_HOST = os.environ.get("PUBLIC_HOST", "sub4k3m1.status.monitor")
 PUBLIC_PORT = int(os.environ.get("PUBLIC_PORT", "8080"))
 CONTROL_PORT = int(os.environ.get("CONTROL_PORT", "9101"))
